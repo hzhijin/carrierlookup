@@ -12,6 +12,25 @@ from tqdm import tqdm
 import pandas as pd
 import time
 
+clist = [{'name':'USA Mobility','web':'@usamobility.net'},
+		 {'name':'Qwest Corporation','web':'@qwestmp.com'},
+		 {'name':'Comcast','web':'no'},
+		 {'name':'Google (Grand Central) BWI - Bandwidth.com - SVR','web':'no'},
+		 {'name':'RCLEC, Inc.','web':'no'},
+		 {'name':'USAMobility','web':'usamobility'},
+		 {'name':'USAMobility','web':'usamobility'},
+		 {'name':'USAMobility','web':'usamobility'},
+		 {'name':'USAMobility','web':'usamobility'},
+		 {'name':'USAMobility','web':'usamobility'},
+		 {'name':'USAMobility','web':'usamobility'},
+		 {'name':'USAMobility','web':'usamobility'},
+		 {'name':'USAMobility','web':'usamobility'},
+		 {'name':'USAMobility','web':'usamobility'},
+		 {'name':'USAMobility','web':'usamobility'},
+		 
+		 
+		 ]
+
 def lookup(p):
 	df = pd.read_excel('c.xlsx')
 	pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
@@ -39,12 +58,5 @@ def lookup(p):
 			print('retrying')
 			time.sleep(2)
 	return pd.DataFrame()
-
-p = '4235135997'
-df = lookup(p)
-if len(df) == 0:
-	print('failed')
-else:
-	print(df)
 
 
